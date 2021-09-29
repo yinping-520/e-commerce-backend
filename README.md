@@ -19,9 +19,9 @@ THEN I am able to successfully create, update, and delete data in my database
 ## videos
 [API Get video walkthrough](https://watch.screencastify.com/v/ofofVRTEJRMRtjwJ8V94)
 
-[API create update and delete video walkthrough](https://watch.screencastify.com/v/BIM4tNALRwf6TRVmezzq)
+[API create update and delete walkthrough video](https://watch.screencastify.com/v/BIM4tNALRwf6TRVmezzq)
 
-[API create update and delete video2 walkthrough](https://watch.screencastify.com/v/CoqlmA3XmkIorsHCxjdV)
+[API create update and delete walkthrough video2](https://watch.screencastify.com/v/CoqlmA3XmkIorsHCxjdV)
 
 ## gitHub Repo
 [Github repo](https://github.com/yinping-520/e-commerce-backend)
