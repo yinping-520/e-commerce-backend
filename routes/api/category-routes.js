@@ -8,7 +8,7 @@ router.get("/", async (req, res) => {
   // be sure to include its associated Products
   try {
     const categoryData = await Category.findAll({
-      include: [{ motel: Product }],
+      include: [{ model: Product }],
     });
     res.status(200).json(categoryData);
   } catch (err) {
@@ -21,7 +21,7 @@ router.get("/:id", async (req, res) => {
   // be sure to include its associated Products
   try {
     const categoryById = await Category.findByPk(req.params.id, {
-      include: [{ motel: Product }],
+      include: [{ model: Product }],
     });
     if (!categoryById) {
       res.status(404).json({ message: "No category found by this id" });
@@ -67,9 +67,10 @@ router.delete("/:id", async (req, res) => {
   try {
     const deletedItem = await Category.destroy({
       where: {
-        id: req.params.id,
-      },
+        id: req.params.id
+      }
     });
+    res.status(200).json(deletedItem)
   } catch (err) {
     res.json(err);
   }
