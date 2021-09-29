@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const { Product, Category, Tag, ProductTag } = require('../../models');
 
-// The `/api/products` endpoint
 
+// The `/api/products` endpoint
 // get all products
 router.get('/', async (req, res) => {
   // find all products
@@ -24,7 +24,7 @@ router.get('/:id', async (req, res) => {
     const getProductById = await Product.findByPk(req.params.id, {
       include: [{motel: Category}, {motel: Tag, through: ProductTag, as: 'product_tag'}]
     })
-    if(!getProductById){res.status(400).json({message: 'No product found by this id'})}
+    if(!getProductById){res.status(404).json({message: 'No product found by this id'})}
     res.status(200).json(getProductById)
 
   } catch(err) {res.status(500).json(err)}
@@ -58,7 +58,7 @@ router.post('/', (req, res) => {
     .then((productTagIds) => res.status(200).json(productTagIds))
     .catch((err) => {
       console.log(err);
-      res.status(400).json(err);
+      res.status(404).json(err);
     });
 });
 
@@ -100,7 +100,7 @@ router.put('/:id', (req, res) => {
     .then((updatedProductTags) => res.json(updatedProductTags))
     .catch((err) => {
       // console.log(err);
-      res.status(400).json(err);
+      res.status(404).json(err);
     });
 });
 

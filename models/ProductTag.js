@@ -16,7 +16,7 @@ ProductTag.init(
     product_id: {
       type: DataTypes.INTEGER,
       references: {
-        motel: "product",
+        model: "product",
         key: "id",
         unique: false
       }
@@ -24,7 +24,7 @@ ProductTag.init(
     tag_id: {
       type: DataTypes.INTEGER,
       references: {
-        motel: "tag",
+        model: "tag",
         key: "id",
         unique: false
       }
